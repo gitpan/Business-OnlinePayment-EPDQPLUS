@@ -1,0 +1,15 @@
+Revision history for Business-OnlinePayment-EPDQPLUS
+
+0.02	2013-02-05
+	Switch to SHA512 from SHA1 since it is probably stronger.
+	Remove blank parameters from hash
+	Make the hash optional as this eases testing hugely
+	Add test_transaction support
+	Added failure_status method as advised by Ivan
+	Add "_info" introspection
+	Added expiration handling of MM/YY as Ivan suggested.
+	Removed routines already in OnlinePayment.pm
+
+0.01    2013-01-13
+        First version, released on an unsuspecting world.
+
