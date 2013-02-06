@@ -1,5 +1,8 @@
 Revision history for Business-OnlinePayment-EPDQPLUS
 
+0.03	2013-02-05
+	Handle integer values for amount
+
 0.02	2013-02-05
 	Switch to SHA512 from SHA1 since it is probably stronger.
 	Remove blank parameters from hash

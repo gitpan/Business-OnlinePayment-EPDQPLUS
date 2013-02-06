@@ -45,7 +45,7 @@ use Business::OnlinePayment;
       country        => 'US',
       phone          => '',
 
-      card_number    => '5569510117486571',
+      card_number    => '5123619745395853',
       expiration     => '0515', # MMYY is a Barclay card format -- what does BOP expect
       cvv2            => '377',
   );
@@ -110,7 +110,7 @@ use XML::Simple;
 
 use vars qw($VERSION $DEBUG);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 our $DEBUG=0;
 
 sub _info {
@@ -165,7 +165,7 @@ sub _map_fields {
 
     my $amount = $content{'amount'};
 
-    if ( $amount =~ /-?\d*\.\d\d/ ) { # Match a number with two decimal places
+    if ( $amount =~ /^-?\d*\.\d\d$/ or $amount =~/^-?\d*$/ ) { # Match a number with two decimal places or a number
       $content{'amount'} = int(100*$amount);
     } else {
       croak "Invalid format for amount";
